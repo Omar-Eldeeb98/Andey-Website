@@ -1,0 +1,708 @@
+/* ?============================================================ global settings ================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    /* font family */
+    --headings-font-family: 'Raleway', sans-serif;
+    --texts-font-family: 'Open Sans', sans-serif;
+    /* colors */
+    --main-color: #FFB21F;
+    /* --main-color: green; */
+    --default-color: #fff;
+    --gray-color: #C3C3C3;
+    /*animation duration*/
+    --animation-duration: 400ms;
+
+
+}
+
+/* ?================================================================== global settings ==================================================== */
+
+/* ?================================================================== loading page ==================================================== */
+.left {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-color);
+    z-index: 999999999999999999;
+    animation: left 1s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+
+}
+
+.right {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 50%;
+    bottom: 0;
+    background-color: var(--main-color);
+    animation: right 1s linear;
+    animation-delay: 0.5s;
+    z-index: 999999999999999999;
+    animation-fill-mode: forwards
+}
+
+.loader {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: white white black white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999999999999999999;
+    animation: spinning 1.5s, 1.5s 1.5s endSpinning;
+    animation-fill-mode: forwards
+}
+
+@keyframes left {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes right {
+    from {
+        right: 50%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes spinning {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+        opacity: 0;
+    }
+
+
+}
+
+@keyframes endSpinning {
+    from {
+        display: block;
+    }
+
+    to {
+        display: none;
+    }
+}
+
+/* ?================================================================== loading page ==================================================== */
+
+
+/* !============================================================== start home section ==================================================== */
+#home {
+    height: 100vh;
+    background-image: url(../assets/images/home2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+
+
+#home .fixed_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    /* border: 8px solid;
+    border-color: #000 #FFB21F; */
+    cursor: pointer;
+    z-index: 99999999;
+
+
+}
+
+#home .fixed_icon_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 99.5%;
+    padding: 15px 25px;
+    top: 30%;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 99999999;
+    transition: all var(--animation-duration);
+}
+
+#home .fixed_icon_2:hover {
+    right: 96%;
+}
+
+#home .fixed_icon_2 a {
+    text-decoration: none;
+    color: var(--default-color);
+    font-size: 18px;
+    z-index: 333;
+}
+
+
+
+
+#home .fixed_icon a {
+    text-decoration: none;
+    color: var(--default-color);
+    font-size: 22px;
+    z-index: 333;
+}
+
+#home .layer {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.827)
+}
+
+#home .layer .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home .layer .container h3 {
+    font-family: var(--headings-font-family);
+    color: var(--default-color);
+    font-size: 2.375rem;
+    font-weight: 400;
+    margin-bottom: 1.875rem;
+}
+
+#home .layer .container h1 {
+    font-family: var(--headings-font-family);
+    color: var(--main-color);
+    font-size: 2.375rem;
+    font-weight: 700;
+    margin-bottom: 1.875rem;
+}
+
+#home .layer .container p {
+    color: var(--gray-color);
+    font-family: var(--texts-font-family);
+    font-size: 14px;
+    line-height: 24px;
+    width: 56%;
+    margin-inline: auto;
+    margin-bottom: 50px;
+    letter-spacing: .0625rem;
+
+}
+
+a {
+    text-decoration: none;
+    color: var(--gray-color);
+    font-size: 1.5625rem;
+    transition: color var(--animation-duration);
+}
+
+.icon_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.125rem;
+    height: 3.125rem;
+    border: .0625rem solid var(--gray-color);
+    transition: border-radius var(--animation-duration);
+}
+
+.icon_container:hover a {
+    color: var(--main-color);
+}
+
+.icon_container:hover {
+    border-radius: 50%;
+}
+
+
+/* !============================================================== end home section ================================================= */
+
+/* !================================================================ start navbar =================================================== */
+
+.navbar {
+
+    border-bottom: .0625rem solid var(--gray-color);
+    margin-bottom: 80px;
+}
+
+
+.navbar-nav .nav-link {
+    color: gray;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item {
+    font-size: 14px;
+    padding: 10px;
+    margin-right: 16px;
+    font-family: var(--texts-font-family);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--main-color);
+
+}
+
+.nav-link:hover {
+    color: var(--main-color);
+}
+
+/* !======================================================== end navbar ================================================================== */
+
+/* !======================================================= start about section ========================================================== */
+#about {
+    margin-bottom: 50px;
+}
+
+#about .container .row .about_title h3 {
+    font-family: var(--headings-font-family);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 1.875rem;
+}
+
+#about .container .row .about_title p {
+    color: gray;
+    font-family: var(--texts-font-family);
+    font-size: 1rem;
+
+
+}
+
+#about .container .row .about_image img {
+    width: 100%;
+}
+
+#about .container .row .about_data {
+    padding-top: 30px;
+
+}
+
+#about .container .row .about_data h3 {
+    font-family: var(--texts-font-family);
+    font-weight: 700;
+    margin-bottom: 20px;
+
+}
+
+#about .container .row .about_data p {
+    color: #989898;
+
+}
+
+#about .container .row .about_data .icon_container_ {
+    color: #989898;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-block: 25px;
+
+
+}
+
+#about .container .row .about_data .icon_container_ p {
+    margin-bottom: 0px;
+    margin-inline-start: 8px;
+}
+
+/* !======================================================== end about section =========================================================== */
+
+/* !======================================================== start skills section =========================================================== */
+#skills {
+    margin-bottom: 70px;
+    /* background-color: #CA8400; */
+    background-color: var(--main-color);
+
+
+}
+
+#skills .container {
+    padding: 50px 20px;
+}
+
+#skills .skills_title {
+    margin-bottom: 50px;
+}
+
+#skills .skills_title h3 {
+
+    font-size: 38px;
+    font-weight: 600;
+    font-family: var(--headings-font-family);
+    padding-top: 30px;
+    margin-bottom: 25px;
+
+}
+
+#skills .skills_title p {
+    font-family: var(--texts-font-family);
+
+}
+
+hr {
+    border-style: dashed;
+    border-width: 2px;
+}
+
+.skill_info h4 {
+    font-family: var(--headings-font-family);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.skill_info p {
+    font-size: .875rem;
+    font-family: var(--texts-font-family);
+    font-size: 14px;
+    line-height: 1.5rem;
+}
+
+/* !======================================================== end skills section =========================================================== */
+
+/* !======================================================== start projects section =========================================================== */
+#projects {
+    padding-top: 50px;
+    margin-bottom: 80px;
+    padding-bottom: 50px;
+}
+
+#projects .container-fluid .project_title h3 {
+    font-family: var(--headings-font-family);
+    font-size: 2.375rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+
+}
+
+#projects .container-fluid .project_title {
+    margin-bottom: 30px;
+}
+
+#projects .container-fluid .project_title p {
+    font-family: var(--texts-font-family);
+    color: gray;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.nav-pills .nav-link.active {
+    color: var(--default-color);
+    background-color: var(--main-color);
+}
+
+.nav-pills .nav-link {
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    color: #000;
+    margin: 8px;
+    transition: background-color var(--animation-duration);
+}
+
+.nav-pills .nav-link:hover {
+    background-color: var(--main-color);
+    color: var(--default-color);
+}
+
+.project_item {
+    position: relative;
+    cursor: pointer;
+}
+
+.project_item:hover .project_data {
+    border: 2px solid #C3C3C3;
+}
+
+
+
+.project_item .layer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.571);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project_item .layer .project_data {
+
+    transition: all var(--animation-duration);
+    width: 90%;
+    padding-block: 28px;
+    padding-inline: 5px;
+    position: relative;
+}
+
+.project_item .layer:hover .project_data h4 {
+    color: var(--main-color);
+}
+
+.project_item .layer:hover .project_data p {
+    opacity: 1;
+
+
+}
+
+.project_item .layer .project_data h4 {
+    font-family: var(--headings-font-family);
+    font-size: 38px;
+    font-weight: bold;
+    color: #C3C3C3;
+    transition: all var(--animation-duration);
+
+
+}
+
+.project_item .layer .project_data h4 span {
+    font-weight: normal;
+}
+
+.project_item .layer .project_data p {
+    color: #C3C3C3;
+    font-size: 14px;
+    font-family: var(--texts-font-family);
+    transition: all var(--animation-duration);
+    opacity: 0;
+
+
+
+}
+
+/* !======================================================== end projects section =========================================================== */
+
+/* !======================================================== start experience section ======================================================== */
+
+#experience {
+    margin-bottom: 3.125rem;
+}
+
+#experience h3 {
+    font-family: var(--headings-font-family);
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3.125rem;
+
+}
+
+#experience .container-fluid {
+    background-color: gray;
+
+}
+
+/* !======================================================== end experience section =========================================================== */
+
+/* !======================================================== start testimonial section ===================================================== */
+
+#testimonial {
+    margin-bottom: 50px;
+}
+
+#testimonial .container h3 {
+    font-family: var(--headings-font-family);
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+#testimonial .container p.p_ {
+    font-family: var(--texts-font-family);
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: bold;
+    color: gray;
+    margin-bottom: 50px;
+
+}
+
+
+.card-body h5 {
+    font-family: var(--headings-font-family);
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.card-body p {
+
+    font-family: var(--texts-font-family);
+    letter-spacing: 1px;
+    color: gray;
+    font-weight: bold;
+    font-size: .875rem;
+}
+
+.card-footer {
+    background-color: gray;
+}
+
+.card-footer small {
+    font-family: var(--texts-font-family) !important;
+    color: var(--default-color) !important;
+}
+
+/* !======================================================== end testimonial section ========================================================= */
+
+/* !======================================================== start contact section ======================================================= */
+#contact {
+    background-color: #2D2D2D;
+ 
+
+}
+
+#contact .container {
+    padding-block: 40px;
+    padding-inline: 50px;
+}
+
+#contact .container h3 {
+    color: var(--default-color);
+    font-family: var(--headings-font-family);
+    font-weight: 600;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+#contact .container p.p__ {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: gray;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact_info span {
+    font-size: 18px;
+    color: gray;
+    font-family: var(--texts-font-family);
+    display: block;
+    margin-bottom: 10px;
+
+}
+
+.contact_info p {
+    color: var(--default-color);
+
+}
+
+
+.contact_form input {
+    background-color: transparent;
+    padding-block: 10px;
+    /* border: 1px solid var(--main-color); */
+    border: 1px solid gray;
+
+}
+
+.contact_form input::placeholder {
+    color: gray;
+}
+
+.contact_form textarea {
+    background-color: transparent;
+    padding-block: 10px;
+    /* border: 1px solid var(--main-color); */
+    border: 1px solid gray;
+}
+
+.contact_form textarea::placeholder {
+    color: gray;
+}
+
+.contact_form form {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.contact_form button {
+    position: absolute;
+    background-color: var(--main-color);
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    right: 0%;
+    
+    font-family: var(--texts-font-family);
+    transition: all var(--animation-duration);
+}
+
+.contact_form button:hover {
+    padding-inline:50px ;
+}
+
+
+.form-control:focus {
+    background-color: transparent !important;
+    border-color: var(--main-color);
+    box-shadow: none;
+    color: var(--default-color);
+}
+
+.foot_hr {
+    color: gray;
+    margin-top: 80px;
+    border-style: solid;
+    color: #FFB21F;
+    border-width: 2px !important;
+    margin-bottom: 50px;
+}
+
+.foot__ {
+    color: gray;
+    text-align: center;
+    font-family: var(--texts-font-family);
+
+
+}
+.foot__  span {
+    color: var(--main-color);
+    font-weight: 700;
+    font-family: var(--texts-font-family);
+}
+
+/* !======================================================== end contact section ========================================================= */
